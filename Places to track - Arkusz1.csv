@@ -1,0 +1,51 @@
+City,Type (park / supermarket),Name,PlacesID
+Frankfurt,Park,Grüneburgpark,ChIJnc3vbEgJvUcRxGJfy-eGHW8
+Frankfurt,Park,Adolph von Holzhausen Park,ChIJRUF65rUOvUcRJG5zOi-Cs-E
+Frankfurt,Park,Bethmann Park,ChIJXXsvj7wOvUcR7Bw75UXlMo8
+Frankfurt,Park,Rebstock Park,ChIJ-aLWlX0JvUcRRQo1Iwxe6Z4
+Frankfurt,Park,Bethmannpark,ChIJXXsvj7wOvUcR7Bw75UXlMo8
+München,Park,Englischer Garten,ChIJayv4lZd1nkcR0e_vfGLfm8k
+München,Park,Westpark,ChIJHyBq09jZnUcRLKkI6e8j7v4
+München,Park,Luitpoldpark,ChIJb-P-HdR1nkcRWHOx1Q3VXdk
+München,Park,Olympiark,ChIJM7U-OGN2nkcRS91BCoGkObE
+München,Park,Alter Botanischer Garten,ChIJUYaFpvB1nkcRHLHMm23OcwY
+Berlin,Park,Tiergarten,ChIJiwmwKghRqEcR0KtfW0YgIQU
+Berlin,Park,Treptower Park,ChIJWVbXxhhPqEcR3OZE5GXI9I4
+Berlin,Park,Volkspark Friedrichshain,ChIJ_S5uaxJOqEcRdg-gu1fEgcI
+Berlin,Park,Gleisdreieck Park,ChIJe8FmEzBQqEcRth79TMVowwU
+Berlin,Park,Mauer Park,ChIJd-d5Rx1SqEcRgCz33OsCSZQ
+Hamburg,Park,Planten un Blomen,ChIJnQn-7D2PsUcRXC53QWChQkM
+Hamburg,Park,Stadtpark,ChIJG-VZ-CeJsUcRxTADPx0XEcg
+Hamburg,Park,Wilhelmsburger Inselpark,ChIJrRUvOieOsUcRpEWJXEHXMYc
+Hamburg,Park,Jenischpark,ChIJMT06FlaEsUcR_G-I5rHicsU
+Hamburg,Park,Öjendorfer Park,ChIJP6N005yMsUcRGAuJXOfSiHE
+Köln,Park,Rheinpark,ChIJrePZR8Alv0cRaUE7t34mhxs
+Köln,Park,Volksgarten,ChIJycChxVAkv0cReWekbd6YLUI
+Köln,Park,Hiroshima-Nagasaki Park,ChIJi2IuPx0lv0cRAla2rNMDWpU
+Köln,Park,Blücher Park,ChIJBcGRxmclv0cRLKDQZKRbg9U
+Köln,Park,Vorgebirgs Park,ChIJfX6Db0Ikv0cR3fvTk46pGdo
+Frankfurt,Supermarket,REWE Gräfstrasse,ChIJiZyjg0QJvUcR-TgkpqbVowU
+Frankfurt,Supermarket,REWE Grüneburgweg,ChIJed_cn7MOvUcRl0bmRz8gs1Q
+Frankfurt,Supermarket,ALDI Große Friedberger Str. ,ChIJ5ReixaQOvUcRrRyIUCpx6NA
+Frankfurt,Supermarket,ALDI Oskar-von-Miller-Straße,ChIJh1STQJ8OvUcRXf1kVhBO0KQ
+Frankfurt,Supermarket,Penny Stiftstraße ,ChIJM98MXaUOvUcRoldhZNIO2e4
+Berlin,Supermarket,Hit Ullrich Kantstraße,ChIJpU9lbv5QqEcRi2P-1X1gkno
+Berlin,Supermarket,REWE Friedrichstraße,ChIJeZ0RHcNRqEcRZfunLIjlWuY
+Berlin,Supermarket,ALDI Mall of Berlin,ChIJrzhg285RqEcRCrcEtu4XG5I
+Berlin,Supermarket,Veganz Warschauer Str.,ChIJgTYV_FpOqEcRWf3pVxwCNBw
+Berlin,Supermarket,ALDI Invalidenstraße,ChIJ1QtBFr1RqEcRdovvLZRzEWc
+Köln,Supermarket,REWE Eigelstein,ChIJwXKgGqMlv0cRe1eSypurnTk
+Köln,Supermarket,Lidl Neumarkt,ChIJfT5IYqklv0cRa8hjie38gBs
+Köln,Supermarket,REWE Richrath,ChIJL631H68lv0cRArPtL5j97hM
+Köln,Supermarket,REWE Waidmarkt,ChIJV3sZrLIlv0cRDMdMigF6Ouc
+Köln,Supermarket,Lidl Habsburgerring,ChIJt3HVGgElv0cR1gaY6-Ey51c
+München,Supermarket,REWE Bahnhofsplatz,ChIJJ5DYw_l1nkcRne9DHGou32o
+München,Supermarket,Edeka München Implerstr. 17,ChIJ4QGqAEzfnUcRqo7nSsLOa6g
+München,Supermarket,Rewe Anulfstrasse,ChIJyQUxW_x1nkcRfjguoxnPQyY
+München,Supermarket,Verdi Supermarkt Berlin,ChIJ5es_gfh1nkcROF0rRYnlCWU
+München,Supermarket,Real Margot-Kalinke,ChIJcQWbNBV0nkcR9kdjH8894Lc
+Hamburg,Supermarket,REWE Neuer Steinweg,ChIJrSnVkxGPsUcRKoR3hP33EQM
+Hamburg,Supermarket,REWE Center Dorotheenstraße ,ChIJLVpNFteIsUcRuioQtaLrogg
+Hamburg,Supermarket,EDEKA Boldt,ChIJBYWOTkqPsUcRRSzM8Opf67g
+Hamburg,Supermarket,EDEKA Stresemannstraße,ChIJhZVuEF6PsUcRGOyONk9-6Tg
+Hamburg,Supermarket,ALDI Hamburg-Altona ,ChIJO8GaIGGPsUcRc8HSmv_c4Tw
