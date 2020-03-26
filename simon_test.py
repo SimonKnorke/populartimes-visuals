@@ -28,8 +28,11 @@ gmaps = googlemaps.Client(key=GOOGLE_API_KEY)
 
 # Do a simple nearby search where we specify the location
 # in lat/lon format, along with a radius measured in meters
-parks = gmaps.places_nearby(location='50.8271434,10.181946', radius=3000, open_now=False, type='park')
+bigFiveCities = ['Berlin', 'Hamburg', 'München', 'Köln', 'Frankfurt']
+parks = []
+for city in bigFiveCities:
+	parks.append(gmaps.places(query='parks', location=city, radius=500, type='park', region='country:DE'))
 #pprint.pprint(parks['results'])
-print(len(parks['results']))
+#print(len(parks['results']))
 for park in parks['results']:
-	print(park['name'])
+	print(park['name'], park['id'])
