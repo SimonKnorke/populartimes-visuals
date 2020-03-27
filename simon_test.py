@@ -19,8 +19,3 @@ else:
 # Test call for populartimes.get_id
 response = populartimes.get_id(GOOGLE_API_KEY, "ChIJSYuuSx9awokRyrrOFTGg0GY")
 print(response)
-
-#germany rectangular 54.418930,6.041843 47.597696,15.092453
-# Test call for populartimes.get !!!
-#response = populartimes.get(GOOGLE_API_KEY, ["zoo"],  (49.313618, 10.854743), (49.541317, 11.277381))
-#print(response)
