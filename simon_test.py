@@ -17,22 +17,5 @@ else:
 	print('your key is {}'.format(GOOGLE_API_KEY))
 
 # Test call for populartimes.get_id
-response = populartimes.get_id(GOOGLE_API_KEY, "ChIJSYuuSx9awokRyrrOFTGg0GY")
+response = populartimes.get_id(GOOGLE_API_KEY, "ChIJnc3vbEgJvUcRxGJfy-eGHW8")
 print(response)
-
-#germany rectangular 54.418930,6.041843 47.597696,15.092453
-# Test call for populartimes.get !!!
-#response = populartimes.get(GOOGLE_API_KEY, ["zoo"],  (49.313618, 10.854743), (49.541317, 11.277381))
-#print(response)
-gmaps = googlemaps.Client(key=GOOGLE_API_KEY)
-
-# Do a simple nearby search where we specify the location
-# in lat/lon format, along with a radius measured in meters
-bigFiveCities = ['Berlin', 'Hamburg', 'München', 'Köln', 'Frankfurt']
-parks = []
-for city in bigFiveCities:
-	parks.append(gmaps.places(query='parks', location=city, radius=500, type='park', region='country:DE'))
-#pprint.pprint(parks['results'])
-#print(len(parks['results']))
-for park in parks['results']:
-	print(park['name'], park['id'])
