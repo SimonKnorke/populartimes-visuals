@@ -17,5 +17,5 @@ else:
 	print('your key is {}'.format(GOOGLE_API_KEY))
 
 # Test call for populartimes.get_id
-response = populartimes.get_id(GOOGLE_API_KEY, "ChIJSYuuSx9awokRyrrOFTGg0GY")
+response = populartimes.get_id(GOOGLE_API_KEY, "ChIJnc3vbEgJvUcRxGJfy-eGHW8")
 print(response)
