@@ -15,6 +15,6 @@ https://developers.google.com/maps/documentation/javascript/examples/places-plac
 
 ### Google-Places API Key
 https://console.cloud.google.com/apis/
- -create a key
- -enable Places-API
- 
+ - create a key
+ - enable Places-API
+
