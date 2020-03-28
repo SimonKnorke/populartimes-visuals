@@ -41,7 +41,7 @@ def get_clean_response(response):
     for key in easy_keys:
         new_dict[key] = response.get(key, 'None')
     new_dict['types'] = '-'.join(response.get('types', ['None']))  # just put all types together with '-' or 'None' if no types
-    #new_dict['lat'] = response.get('coordinates', {'lat': 51})['lat']  # grap coordinates or default value
+    #new_dict['lat'] = response.get('coordinates', {'lat': 51})['lat']  # ignore coordinates for dataframe
     #new_dict['lng'] = response.get('coordinates', {'lng': 10})['lng']
     time_spent = response.get('time_spent', ['None']) # e.g. time_spent: [60,60], 
     new_dict['time_spent'] = '-'.join([str(i) for i in time_spent]) # have to convert to string for join
@@ -57,12 +57,10 @@ def get_clean_response(response):
     return new_dict
 
 
-# NOT USED YET
 def dump_response_list(response_list, folder_path):
     """store response_list locally"""
     dt_now = datetime.datetime.now()
     str_now = dt_now.strftime('%Y-%m-%d_%H%M%S')
-    #placename = response.get('name', 'None')
     filename = '{}_response_list.pkl'.format(str_now)
     joblib.dump(response_list, folder_path + filename)
 
