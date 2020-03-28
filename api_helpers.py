@@ -58,10 +58,12 @@ def get_clean_response(response):
 
 
 # NOT USED YET
-def store_response(response, dt_now):
+def dump_response_list(response_list, folder_path):
     """store response_list locally"""
+    dt_now = datetime.datetime.now()
     str_now = dt_now.strftime('%Y-%m-%d_%H%M%S')
-    placename = response.get('name', 'None')
-    filename = '{}_{}.pkl'.format(placename, str_now)
-    joblib.dump(response, filename)
+    #placename = response.get('name', 'None')
+    filename = '{}_response_list.pkl'.format(str_now)
+    joblib.dump(response_list, folder_path + filename)
+
 
