@@ -15,14 +15,15 @@ scope = ["https://spreadsheets.google.com/feeds",
          "https://www.googleapis.com/auth/drive"]
 
 GOOGLE_API_KEY = 'AIzaSyB01iwAcDWzDrs_Ltf0ZvHgX02vCjX1dpY'  # EDIT please!!
-CRED_FILE = 'populartimes-visuals-c883285882c7.json'  # EDIT please!!
+CRED_FILE = 'creds.json'  # EDIT please!!
 creds = ServiceAccountCredentials.from_json_keyfile_name(CRED_FILE, scope)
 client = gspread.authorize(creds)
 
 # load spreadsheet, read as dataframe
 sh = client.open('TestData')
 sh_places = sh.worksheet("places")
-sh_data = sh.worksheet("data")
+sh_data = sh.worksheet("test")
+#sh_test = sh.worksheet("data")
 df_places = pd.DataFrame(sh_places.get_all_records()) # OR gd.get_as_dataframe(sh_places)
 df_data = pd.DataFrame(sh_data.get_all_records())
 print('-->connected to spreadsheet')
