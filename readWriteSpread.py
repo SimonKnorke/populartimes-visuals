@@ -32,17 +32,19 @@ data = sh.worksheet("data")
 placesWeTrack = places.get_all_values()
 columnNames = ['id', 'name', 'address', 'types', 'coordinates', 'rating',
                'international_phone_number', 'current_popularity','populartimes', 'time_spent']
-rowNumber = 1
+rowNumber = 2
 for i, place in enumerate(placesWeTrack):
     if i > 1 and place[0] != '' and i < 3:
         response = populartimes.get_id(GOOGLE_API_KEY, place[3])
-        newEntry = []
+        newRow = []
+        columnNumber = 0
         for name in columnNames:
             for key in response.keys():
                 if name == key:
+                    columnNumber += 1
                     print(response[key])
-                    newEntry.append(key)
-        #data.update('B{}'.format(rowNumber), newEntry)
+                    newRow.append(key)
+        data.update('B{}'.format(rowNumber), [newRow])
         rowNumber += 1
 #data = sheet.get_all_records()  # Get a list of all records
 #print(data)
