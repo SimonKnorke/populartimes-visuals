@@ -18,3 +18,5 @@ https://console.cloud.google.com/apis/
  - create a key
  - enable Places-API
 
+### Read and Write Googlesheets with python
+ - https://www.youtube.com/watch?v=cnPlKLEGR7E
