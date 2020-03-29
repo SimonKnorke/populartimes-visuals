@@ -3,6 +3,7 @@ Created: 2020-03-28
 Author: Simon
 """
 
+import json
 import pandas as pd
 import gspread
 import gspread_dataframe as gd
@@ -14,15 +15,20 @@ scope = ["https://spreadsheets.google.com/feeds",
          "https://www.googleapis.com/auth/drive.file",
          "https://www.googleapis.com/auth/drive"]
 
-GOOGLE_API_KEY = 'AIzaSyB01iwAcDWzDrs_Ltf0ZvHgX02vCjX1dpY'  # EDIT please!!
-CRED_FILE = 'populartimes-visuals-c883285882c7.json'  # EDIT please!!
-creds = ServiceAccountCredentials.from_json_keyfile_name(CRED_FILE, scope)
+#GOOGLE_API_KEY = 'AIzaSyBE29HdBocD2F5TKfq1IaePz-x_cAxB8p8'#'AIzaSyB01iwAcDWzDrs_Ltf0ZvHgX02vCjX1dpY'  # EDIT please!!
+#GOOGLE_API_KEY = 'None'
+with open('api_creds.json', 'r') as fp:
+    api_creds = json.load(fp)
+    GOOGLE_API_KEY = api_creds.get('GOOGLE_API_KEY', 'None')
+print('GOOGLE_API_KEY: {}'.format(GOOGLE_API_KEY))
+SERVICE_CREDS = 'service_creds.json'  # EDIT please!!
+creds = ServiceAccountCredentials.from_json_keyfile_name(SERVICE_CREDS, scope)
 client = gspread.authorize(creds)
 
 # load spreadsheet, read as dataframe
 sh = client.open('TestData')
 sh_places = sh.worksheet("places")
-sh_data = sh.worksheet("data")
+sh_data = sh.worksheet("test") # test sheet on google sheets
 df_places = pd.DataFrame(sh_places.get_all_records())  # OR gd.get_as_dataframe(sh_places)
 df_data = pd.DataFrame(sh_data.get_all_records())
 print('-->connected to spreadsheet')

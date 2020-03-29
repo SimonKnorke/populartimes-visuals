@@ -8,27 +8,33 @@ import populartimes
 import pandas as pd
 from collections import OrderedDict
 import joblib
+import time
 
 
 def create_popular_dataframe(GOOGLE_API_KEY, places_id_list, print_mode=False):
     """Dataframe for cleaned API rensponse (simpler dict) + timestamps."""
     response_list = []  # original responses as list, could be saved as pickle file if wanted
     reponse_dict_list = []
-    for place_id in places_id_list:
+    for idx, place_id in enumerate(places_id_list):
+        #time.sleep(10)
         dt_now = datetime.datetime.now()
         str_now = dt_now.strftime('%Y-%m-%d_%H%M%S')
-        response = populartimes.get_id(GOOGLE_API_KEY, place_id)
-        response_list.append(response)
-        clean_response = get_clean_response(response)
-        clean_response['timestamp'] = str_now  # Put datetime in response dict
-        clean_response = OrderedDict(clean_response)  # to set timestamp to beginning
-        clean_response.move_to_end('timestamp', last=False)
-        reponse_dict_list.append(clean_response)
-        if print_mode:
-            print('Response for Time {}:'.format(str_now))
-            for (key, val) in clean_response.items():
-                print('{}: {}'.format(key, val))
-            print(clean_response)
+        try:
+            response = populartimes.get_id(GOOGLE_API_KEY, place_id)
+            print('get place {}: {}'.format(idx, response.get('name', 'None')))
+            response_list.append(response)
+            clean_response = get_clean_response(response)
+            clean_response['timestamp'] = dt_now#str_now  # Put datetime in response dict
+            clean_response = OrderedDict(clean_response)  # to set timestamp to beginning
+            clean_response.move_to_end('timestamp', last=False)
+            reponse_dict_list.append(clean_response)
+            if print_mode:
+                print('Response for Time {}:'.format(str_now))
+                for (key, val) in clean_response.items():
+                    print('{}: {}'.format(key, val))
+                print(clean_response)
+        except:
+            print('not worked for this one')
     df_response = pd.DataFrame(reponse_dict_list)
     return df_response, response_list
 
@@ -40,7 +46,7 @@ def get_clean_response(response):
     easy_keys = ['id', 'name', 'address', 'rating', 'rating_n', 'current_popularity']
     for key in easy_keys:
         new_dict[key] = response.get(key, 'None')
-    new_dict['types'] = '-'.join(response.get('types', ['None']))  # just put all types together with '-' or 'None' if no types
+    new_dict['types'] = '-'.join(response.get('types', ['None']))  # concatenate types with '-' or 'None' if no types
     #new_dict['lat'] = response.get('coordinates', {'lat': 51})['lat']  # ignore coordinates for dataframe
     #new_dict['lng'] = response.get('coordinates', {'lng': 10})['lng']
     time_spent = response.get('time_spent', ['None']) # e.g. time_spent: [60,60], 
