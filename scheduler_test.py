@@ -38,7 +38,8 @@ print('-->connected to spreadsheet')
 
 def main():
     global df_data
-    places_id_list = df_places['PlacesID'].to_list()
+    #places_id_list = df_places['PlacesID'].to_list()
+    places_id_list = df_places.loc[df_places['deactivated'] == '', 'PlacesID'].to_list()
     print('--> create pop dataframe for {} places'.format(len(places_id_list)))
     df_response, response_list = create_popular_dataframe(GOOGLE_API_KEY, places_id_list, print_mode=False)
     dump_response_list(response_list, DUMP_FOLDER)

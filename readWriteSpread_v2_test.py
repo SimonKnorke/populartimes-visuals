@@ -9,6 +9,8 @@ import gspread
 import gspread_dataframe as gd
 from oauth2client.service_account import ServiceAccountCredentials
 from api_helpers import create_popular_dataframe
+from apscheduler.schedulers.blocking import BlockingScheduler
+import datetime
 
 scope = ["https://spreadsheets.google.com/feeds",
          "https://www.googleapis.com/auth/spreadsheets",
@@ -33,9 +35,21 @@ df_places = pd.DataFrame(sh_places.get_all_records())  # OR gd.get_as_dataframe(
 df_data = pd.DataFrame(sh_data.get_all_records())
 print('-->connected to spreadsheet')
 
-if __name__ == "__main__":
+
+def main():
+    global df_data
+    print('Start test - {}'.format(str(datetime.datetime.now())))
     test_id_list = ['ChIJWVbXxhhPqEcR3OZE5GXI9I4']
-    df_response, response_list = create_popular_dataframe(GOOGLE_API_KEY, test_id_list, print_mode=True)
+    df_response, response_list = create_popular_dataframe(GOOGLE_API_KEY, test_id_list, print_mode=False)
     updated = df_data.append(df_response)
     gd.set_with_dataframe(sh_data, updated)
+    df_data = updated
     print('-->wrote response to spreadsheet')
+
+
+if __name__ == "__main__":
+    main()
+    #print('Set schedule for Interval: {} Hours'.format(HOURS_INTERVAL))
+    #scheduler = BlockingScheduler()
+    #scheduler.add_job(main, 'interval', minutes=1)  # hours, minutes, seconds=5
+    #scheduler.start()
