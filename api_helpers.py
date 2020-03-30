@@ -8,7 +8,7 @@ import populartimes
 import pandas as pd
 from collections import OrderedDict
 import joblib
-import time
+import gspread
 
 
 def create_popular_dataframe(GOOGLE_API_KEY, places_id_list, print_mode=False):
@@ -69,5 +69,13 @@ def dump_response_list(response_list, folder_path):
     str_now = dt_now.strftime('%Y-%m-%d_%H%M%S')
     filename = '{}_response_list.pkl'.format(str_now)
     joblib.dump(response_list, folder_path + filename)
+
+
+def connect_to_spreadsheet(spreadsheet, creds, print_mode=False):
+    client = gspread.authorize(creds)
+    sh = client.open(spreadsheet)
+    if print_mode:
+        print('-->connected to spreadsheet')
+    return sh
 
 
