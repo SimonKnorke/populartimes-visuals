@@ -29,11 +29,10 @@ SPREADSHEET = 'TestData'
 SHEET_PLACES = 'places'
 SHEET_DATA = 'test'
 
-creds = ServiceAccountCredentials.from_json_keyfile_name(SERVICE_CREDS, scope)
-
 
 def main():
     print('Start test - {}'.format(str(datetime.datetime.now())))
+    creds = ServiceAccountCredentials.from_json_keyfile_name(SERVICE_CREDS, scope)
     sh = connect_to_spreadsheet(SPREADSHEET, creds, print_mode=True)
     sh_places = sh.worksheet(SHEET_PLACES)
     sh_data = sh.worksheet(SHEET_DATA)
